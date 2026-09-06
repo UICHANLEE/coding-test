@@ -1,6 +1,6 @@
 # daily pair — 두 사람의 8주 코딩 스터디
 
-Python3 1문제 + MySQL 1문제를 매일 체크하는 **Next.js + Neon Postgres** 앱입니다. Vercel에 바로 연결할 수 있도록 전환했습니다. 기존 Sites 주소는 별도의 이전 배포이며, 이 소스를 수정해도 그 주소가 자동 갱신되지는 않습니다.
+Python3 1문제 + MySQL 1문제를 매일 체크하는 **Next.js + Neon Postgres** 앱입니다. GitHub `main` 브랜치와 Vercel이 연결되어 있으며, 현재 배포 주소는 **<https://coding-test-gules.vercel.app>**입니다.
 
 ## 두 사람이 사용하는 방법
 
@@ -62,17 +62,17 @@ npm run db:migrate
 - Output Directory: Next.js 기본값 (별도 입력 없음)
 - Node.js: **22.x**
 
-또는 Vercel CLI가 연결되어 있으면:
+이 저장소는 `git@github.com:UICHANLEE/coding-test.git`과 SSH로 연결되어 있습니다. Vercel CLI로 다시 설정하거나 배포하려면:
 
 ```bash
-vercel link
-# Vercel 프로젝트에 위 환경 변수를 등록하고 DB 마이그레이션을 마친 뒤
-vercel --prod
+npm run vercel:configure
+npm run db:migrate
+npx vercel --prod
 ```
 
 두 사람이 배포 URL을 열어 각자 로그인하면 됩니다. Vercel의 Deployment Protection으로 사이트가 팀원 전용이라면 상대도 접속할 수 있도록 접근 설정을 조정하거나 프로덕션 도메인을 공유하세요. 앱 자체 로그인은 계속 적용됩니다.
 
-> 소스와 빌드는 준비되어 있으며 실제 Vercel 프로젝트 생성·환경 변수 등록·Neon 원격 마이그레이션·배포는 아직 실행하지 않았습니다.
+Vercel 프로젝트와 Neon 데이터베이스 연결, 환경 변수 등록, 원격 마이그레이션, 프로덕션 배포까지 완료했습니다. 로컬의 `STUDY_ACCESS_CODES.txt`에 두 사람에게 각각 전달할 로그인 코드가 저장되어 있으며 Git에는 포함되지 않습니다.
 
 ## 로컬 실행과 검증
 

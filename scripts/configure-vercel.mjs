@@ -32,9 +32,20 @@ for (const name of names) {
     throw new Error(`${name} 값이 없습니다. npm run setup을 먼저 실행하세요.`);
   for (const environment of ['production', 'preview', 'development']) {
     const result = spawnSync(
-      'vercel',
-      ['env', 'add', name, environment, '--force'],
-      { input: value, encoding: 'utf8' },
+      'npx',
+      [
+        '--yes',
+        'vercel@59.11.2',
+        'env',
+        'add',
+        name,
+        environment,
+        '--force',
+        '--value',
+        value,
+        '--yes',
+      ],
+      { encoding: 'utf8' },
     );
     if (result.status !== 0) {
       console.error(
