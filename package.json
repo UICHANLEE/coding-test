@@ -15,6 +15,7 @@
     "typecheck": "tsc --noEmit",
     "setup": "node scripts/setup.mjs",
     "vercel:configure": "node scripts/configure-vercel.mjs",
+    "vercel:verify": "node --env-file-if-exists=.env.local scripts/verify-deployment.mjs",
     "db:migrate": "node --env-file-if-exists=.env.local scripts/migrate.mjs",
     "db:import": "node --import tsx --env-file-if-exists=.env.local scripts/import-records.mjs"
   },

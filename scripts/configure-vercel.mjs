@@ -34,7 +34,7 @@ for (const name of names) {
     const result = spawnSync(
       'vercel',
       ['env', 'add', name, environment, '--force'],
-      { input: `${value}\n`, encoding: 'utf8' },
+      { input: value, encoding: 'utf8' },
     );
     if (result.status !== 0) {
       console.error(
