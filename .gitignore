@@ -41,3 +41,5 @@ next-env.d.ts
 
 # Safe deployment template, never actual credentials
 !.env.example
+.env*.local
+STUDY_ACCESS_CODES.txt
